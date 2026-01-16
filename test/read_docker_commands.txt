@@ -1,0 +1,19 @@
+Now let's map this to a Python container:
+
+    docker run -it \
+        --rm \
+        -v $(pwd)/test:/app/test \
+        --entrypoint=bash \
+        python:3.9.16-slim
+
+--------------------------------------------
+
+Inside the container, run:
+
+    cd /app/test
+    ls -la
+    cat file1.txt
+    python list_files.py
+
+
+Result:- You'll see the files from your host machine are accessible in the container!
